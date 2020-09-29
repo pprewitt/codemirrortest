@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="https://kit.fontawesome.com/0817df7929.js" crossorigin="anonymous"></script>
+    <title>QuikCode</title>
+</head>
+
+<body class="bg-secondary">
+    <!-- navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" style="background-color: #c2d6d6;">
+        <!-- brand button -->
+        <a class="navbar-brand" href="index.html">Philip Prewitt, LPC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <!-- home button -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- portfolio button -->
+                <li class="nav-item">
+                    <a class="nav-link" href="Portfolio.html">Professional/Portfolio</a>
+                </li>
+                <!-- contact button -->
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Personal/Contact</a>
+                </li>
+            </ul>
+            <!-- tag line -->
+        </div>
+    </nav>
+
+    <!-- main section -->
+    <main class="container mt-4">
+        <div class="row ">
+            <aside class="col-md-3">
+                <div class="card mb-3 border-0 bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Recently Viewed Code</h5>
+
+                        <button
+                            class='btn-outline-primary mb-2 mt-0 mx-1 btn d-flex justify-content-center btn-default btn-block'>
+                            For Loop</button>
+                        <button
+                            class='btn-outline-primary mb-2 mt-0 mx-1 btn d-flex justify-content-center btn-default btn-block'>
+                            HTML Card</button>
+                        <button
+                            class='btn-outline-primary mb-2 mt-0 mx-1 btn d-flex justify-content-center btn-default btn-block'>
+                            JavaScript Object</button>
+                        <button
+                            class='btn-outline-primary mb-2 mt-0 mx-1 btn d-flex justify-content-center btn-default btn-block'>
+                            SQL Join</button>
+                        <button
+                            class='btn-outline-primary mb-2 mt-0 mx-1 btn d-flex justify-content-center btn-default btn-block'>
+                            Connection.js</button>
+                    </div>
+                </div>
+            </aside>
+            <article class="col-md-6">
+                <!-- bio/mission section -->
+                <div class="card mb-3 border-0 bg-light">
+                    <div class="mirror m-4" id="demo">
+                    </div>
+                    <div class="card-body">
+                        <div class="dropdown">
+                            <a class="btn btn-outline-secondary dropdown-toggle ml-3" role="button"
+                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"onchange="selectMode()">
+                                Select a Language
+                            </a>
+
+                            <div class="dropdown-menu" id="languageSelect" aria-labelledby="dropdownMenuLink" >
+                                <a class="dropdown-item" href="#" value="htmlembedded">HTML</a>
+                                <a class="dropdown-item" href="#" value="css">CSS</a>
+                                <a class="dropdown-item" href="#" value="handlebars">Handlebars</a>
+                                <a class="dropdown-item" href="#" value="javascript">JavaScript</a>
+                                <a class="dropdown-item" href="#" value="markdown">Markdown</a>
+                                <a class="dropdown-item" href="#" value="sql">SQL</a>
+
+                            </div>
+                        </div>
+                        <div class="form-group mr-3 ml-3 mt-2">
+                            <label for="formGroupExampleInput2">Edit Keywords</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2"
+                                placeholder="object, loop, card, etc">
+                        </div>
+
+                        <button type="submit" class="btn btn-info ml-3 mb-4">Save to your Library</button>
+                    </div>
+                </div>
+            </article>
+            <!-- contact form section -->
+            <aside class="col-md-3">
+                <div class="card mb-3 border-0 bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Code Search</h5>
+                        <p class="card-text">Use the fields below to search for existing public code or code from your
+                            own library.</p>
+                    </div>
+                    <form>
+                        <div class="form-group mr-3 ml-3">
+                            <label for="formGroupExampleInput">Language</label>
+                            <input type="text" class="form-control form-control-sm" id="formGroupExampleInput"
+                                placeholder="HTML, CSS, JavaScript, SQL, etc">
+                        </div>
+                        <div class="form-group mr-3 ml-3">
+                            <label for="formGroupExampleInput2">Keyword</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2"
+                                placeholder="object, loop, card, etc">
+                        </div>
+
+                        <button type="submit" class="btn btn-info ml-3 mb-4">Get some code</button>
+                    </form>
+                </div>
+            </aside>
+    </main>
+    <footer class="row">
+        <div class="col-md-12">
+            <div class="card-footer text-white text-center">
+                <p> &copy; 2020 Philip Prewitt, LPC</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="lib/codemirror.js"></script>
+
+    <script src="mode/javascript/javascript.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
